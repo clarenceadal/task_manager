@@ -18,13 +18,13 @@ class TaskTile extends StatelessWidget {
     return ListTile(
       key: ValueKey(task.id),
       leading: Checkbox(
-        key: Key('checkbox_\${task.id}'),
+        key: Key('checkbox_${task.id}'),
         value: task.isCompleted,
         onChanged: (_) => onToggle(),
       ),
       title: Text(
         task.title,
-        key: Key('title_\${task.id}'),
+        key: Key('title_${task.id}'),
         style: TextStyle(
           decoration: task.isCompleted
               ? TextDecoration.lineThrough
@@ -33,7 +33,7 @@ class TaskTile extends StatelessWidget {
       ),
       subtitle: Text(task.priority.name.toUpperCase()),
       trailing: IconButton(
-        key: Key('delete_\${task.id}'),
+        key: Key('delete_${task.id}'),
         icon: const Icon(Icons.delete),
         onPressed: onDelete,
       ),
