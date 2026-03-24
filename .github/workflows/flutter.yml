@@ -3,12 +3,13 @@ name: flutter unit test/ widget test
 on:
   push:
     branches: [ main ]
-  pull_request: [ main ]
+  pull_request: 
+    branches: [ main ]
 
 jobs:
   build:
-    run-on: ubunto-latest
-
+    runs-on: ubunto-latest
+    
     steps: 
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -16,7 +17,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.0'
+          flutter-version: '3.38.5'
 
       - name: Install Flutter dependencies
         run: flutter pub get
